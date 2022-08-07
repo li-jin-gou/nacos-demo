@@ -7,4 +7,4 @@ require (
 	github.com/nacos-group/nacos-sdk-go v1.1.1
 )
 
-replace github.com/cloudwego/hertz => github.com/li-jin-gou/hertz v0.1.1-0.20220725165153-75e5cdf8900c
+replace github.com/cloudwego/hertz => github.com/li-jin-gou/hertz v0.1.1-0.20220807071609-0f7493a0f045

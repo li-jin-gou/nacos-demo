@@ -48,14 +48,12 @@ func main() {
 		r := nacos_demo.NewNacosRegistry(cli)
 		h := server.Default(
 			server.WithHostPorts(addr),
-			server.WithRegistry(r),
-			server.WithRegistryInfo(&registry.Info{
+			server.WithRegistry(r, &registry.Info{
 				ServiceName: "hertz.test.demo",
 				Addr:        utils.NewNetAddr("tcp", addr),
 				Weight:      10,
 				Tags:        nil,
 			}))
-
 		h.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
 			ctx.JSON(consts.StatusOK, utils.H{"ping": "pong1"})
 		})
@@ -67,14 +65,12 @@ func main() {
 		r := nacos_demo.NewNacosRegistry(cli)
 		h := server.Default(
 			server.WithHostPorts(addr),
-			server.WithRegistry(r),
-			server.WithRegistryInfo(&registry.Info{
+			server.WithRegistry(r, &registry.Info{
 				ServiceName: "hertz.test.demo",
 				Addr:        utils.NewNetAddr("tcp", addr),
 				Weight:      10,
 				Tags:        nil,
 			}))
-
 		h.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
 			ctx.JSON(consts.StatusOK, utils.H{"ping": "pong2"})
 		})
