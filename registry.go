@@ -6,7 +6,8 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/cloudwego/hertz/pkg/common/registry"
+	"github.com/cloudwego/hertz/pkg/app/server/registry"
+
 	"github.com/nacos-group/nacos-sdk-go/clients/naming_client"
 	"github.com/nacos-group/nacos-sdk-go/vo"
 )

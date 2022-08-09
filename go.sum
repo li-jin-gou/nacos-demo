@@ -58,6 +58,8 @@ github.com/li-jin-gou/hertz v0.1.1-0.20220725165153-75e5cdf8900c h1:gb7BacBXMdxO
 github.com/li-jin-gou/hertz v0.1.1-0.20220725165153-75e5cdf8900c/go.mod h1:GWWYlAVkq1gDu6vJd/XNciWsP6q0d4TrEKk5fpJYF04=
 github.com/li-jin-gou/hertz v0.1.1-0.20220807071609-0f7493a0f045 h1:EjuTu3OBbNnlbSQh+sK30HjKvgoG4OCNVmY8v/ztXlY=
 github.com/li-jin-gou/hertz v0.1.1-0.20220807071609-0f7493a0f045/go.mod h1:GWWYlAVkq1gDu6vJd/XNciWsP6q0d4TrEKk5fpJYF04=
+github.com/li-jin-gou/hertz v0.1.1-0.20220809035314-b9459a88c95e h1:i9UGzgA0Ao6g7fzob74MJX0jn2unC4vktf2NbuwslJ0=
+github.com/li-jin-gou/hertz v0.1.1-0.20220809035314-b9459a88c95e/go.mod h1:GWWYlAVkq1gDu6vJd/XNciWsP6q0d4TrEKk5fpJYF04=
 github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
 github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd h1:TRLaZ9cD/w8PVh93nsPXa1VrQ6jlwL5oN8l14QlcNfg=
 github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=

@@ -4,7 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/cloudwego/hertz/pkg/common/discovery"
+	"github.com/cloudwego/hertz/pkg/app/client/discovery"
+
 	"github.com/nacos-group/nacos-sdk-go/clients/naming_client"
 	"github.com/nacos-group/nacos-sdk-go/vo"
 )

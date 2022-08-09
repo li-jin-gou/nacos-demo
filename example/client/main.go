@@ -3,8 +3,9 @@ package main
 import (
 	"context"
 
+	"github.com/cloudwego/hertz/pkg/app/middlewares/client/sd"
+
 	"github.com/cloudwego/hertz/pkg/app/client"
-	"github.com/cloudwego/hertz/pkg/app/middlewares/client/service_discovery"
 	"github.com/cloudwego/hertz/pkg/common/config"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 	nacos_demo "github.com/longlihale/nacos-demo"
@@ -39,7 +40,7 @@ func main() {
 		panic(err)
 	}
 	r := nacos_demo.NewNacosResolver(naocsCli)
-	cli.Use(service_discovery.DiscoveryMW(r))
+	cli.Use(sd.Discovery(r))
 	for i := 0; i < 10; i++ {
 		status, body, err := cli.Get(context.Background(), nil, "http://hertz.test.demo/ping", config.WithSD(true))
 		if err != nil {
