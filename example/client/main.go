@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"encoding/json"
+	"github.com/cloudwego/hertz/pkg/protocol"
 
 	"github.com/cloudwego/hertz/pkg/app/client"
 	"github.com/cloudwego/hertz/pkg/app/middlewares/client/sd"
@@ -12,6 +14,11 @@ import (
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/vo"
 )
+
+type Test struct {
+	A int `json:"a"`
+	B int `json:"b"`
+}
 
 func main() {
 	cli, err := client.NewClient()
@@ -41,10 +48,22 @@ func main() {
 	r := nacos_demo.NewNacosResolver(naocsCli)
 	cli.Use(sd.Discovery(r))
 	for i := 0; i < 10; i++ {
-		status, body, err := cli.Get(context.Background(), nil, "http://hertz.test.demo/ping", config.WithSD(true))
+		// set request config、method、request uri.
+		req := protocol.AcquireRequest()
+		req.SetOptions(config.WithSD(true))
+		req.SetMethod("POST")
+		req.SetRequestURI("http://hertz.test.demo/ping")
+		t := Test{A: i, B: i}
+		bytes, _ := json.Marshal(t)
+		// set body and content type
+		req.SetBody(bytes)
+		req.Header.SetContentTypeBytes([]byte("application/json"))
+		resp := protocol.AcquireResponse()
+		// send request
+		err := cli.Do(context.Background(), req, resp)
 		if err != nil {
 			hlog.Fatal(err)
 		}
-		hlog.Infof("code=%d,body=%s", status, string(body))
+		hlog.Infof("code=%d,body=%s", resp.StatusCode(), string(resp.Body()))
 	}
 }
